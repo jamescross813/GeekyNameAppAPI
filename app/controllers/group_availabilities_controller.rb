@@ -1,0 +1,2 @@
+class GroupAvailabilitiesController < ApplicationController
+end
