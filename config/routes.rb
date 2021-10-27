@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_events
   resources :user_groups
   resources :events
   resources :friends
