@@ -1,0 +1,2 @@
+class EventAvailabilitiesController < ApplicationController
+end
