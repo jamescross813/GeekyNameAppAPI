@@ -1,0 +1,2 @@
+class UserAvailabilitiesController < ApplicationController
+end
