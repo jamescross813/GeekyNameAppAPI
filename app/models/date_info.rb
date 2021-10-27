@@ -1,0 +1,2 @@
+class DateInfo < ApplicationRecord
+end

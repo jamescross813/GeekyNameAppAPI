@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :date_infos
   resources :groups
   resources :users
   resources :usernames
