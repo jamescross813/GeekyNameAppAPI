@@ -4,5 +4,5 @@ class Group < ApplicationRecord
     has_many :availabilities, through: :group_availabilities
     has_many :group_availabilities
     has_many :events, through: :group_events
-    hans_many :group_events
+    has_many :group_events
 end
