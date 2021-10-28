@@ -12,7 +12,7 @@ class EventsController < ApplicationController
             render json: event,
                 except: [:created_at, :updated_at]
         else
-            render json: {message: "No Event created"}
+            render json: {message: "No Event added"}
         end
     end
 
