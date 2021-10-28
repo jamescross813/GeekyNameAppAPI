@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_10_27_034658) do
 
   create_table "date_infos", force: :cascade do |t|
     t.integer "day"
-    t.integer "month"
+    t.string "month"
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

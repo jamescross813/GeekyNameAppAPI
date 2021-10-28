@@ -2,7 +2,7 @@ class CreateDateInfos < ActiveRecord::Migration[6.1]
   def change
     create_table :date_infos do |t|
       t.integer :day
-      t.integer :month
+      t.string :month
       t.integer :year
 
       t.timestamps
