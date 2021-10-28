@@ -25,4 +25,10 @@ class EventsController < ApplicationController
             render json: {message: "Could not create event"}
         end
     end
+
+    private
+
+    def event_params
+        params.require(:event).permit(:event_name, :description, :est_time, :game_type)
+    end
 end
