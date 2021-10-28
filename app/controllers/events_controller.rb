@@ -15,4 +15,14 @@ class EventsController < ApplicationController
             render json: {message: "No Event created"}
         end
     end
+
+    def create
+        event = Event.new(event_params)
+        if event.save
+            render json: event,
+                except: [:created_at, :updated_at]
+        else
+            render json: {message: "Could not create event"}
+        end
+    end
 end
