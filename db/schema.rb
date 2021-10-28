@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_27_034658) do
+ActiveRecord::Schema.define(version: 2021_10_28_033812) do
 
   create_table "availabilities", force: :cascade do |t|
     t.string "date"
@@ -72,6 +72,15 @@ ActiveRecord::Schema.define(version: 2021_10_27_034658) do
     t.index ["group_id"], name: "index_group_availabilities_on_group_id"
   end
 
+  create_table "group_events", force: :cascade do |t|
+    t.integer "group_id", null: false
+    t.integer "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_group_events_on_event_id"
+    t.index ["group_id"], name: "index_group_events_on_group_id"
+  end
+
   create_table "groups", force: :cascade do |t|
     t.string "group_name"
     t.datetime "created_at", precision: 6, null: false
@@ -119,6 +128,8 @@ ActiveRecord::Schema.define(version: 2021_10_27_034658) do
   add_foreign_key "friends", "users"
   add_foreign_key "group_availabilities", "availabilities"
   add_foreign_key "group_availabilities", "groups"
+  add_foreign_key "group_events", "events"
+  add_foreign_key "group_events", "groups"
   add_foreign_key "user_availabilities", "availabilities"
   add_foreign_key "user_availabilities", "users"
   add_foreign_key "user_events", "events"
