@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
-  resources :group_events
-  resources :friend_groups
-  resources :event_availabilities
-  resources :group_availabilities
-  resources :user_availabilities
-  resources :user_events
-  resources :user_groups
+  resources :group_events, only:[:show, :index]
+  resources :friend_groups, only:[:show, :index]
+  resources :event_availabilities, only:[:show, :index]
+  resources :group_availabilities, only:[:show, :index]
+  resources :user_availabilities, only:[:show, :index]
+  resources :user_events, only:[:show, :index]
+  resources :user_groups, only:[:show, :index]
   resources :events
   resources :friends
   resources :availabilities
-  resources :date_infos
+  resources :date_infos, only:[:show, :index]
   resources :groups
   resources :users
   
