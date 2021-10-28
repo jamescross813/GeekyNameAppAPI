@@ -56,10 +56,11 @@ ActiveRecord::Schema.define(version: 2021_10_27_034658) do
   end
 
   create_table "friends", force: :cascade do |t|
-    t.string "user_id_one"
-    t.string "user_id_two"
+    t.integer "user_id", null: false
+    t.integer "friend_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_friends_on_user_id"
   end
 
   create_table "group_availabilities", force: :cascade do |t|
@@ -116,6 +117,7 @@ ActiveRecord::Schema.define(version: 2021_10_27_034658) do
   add_foreign_key "events", "groups"
   add_foreign_key "friend_groups", "friends"
   add_foreign_key "friend_groups", "groups"
+  add_foreign_key "friends", "users"
   add_foreign_key "group_availabilities", "availabilities"
   add_foreign_key "group_availabilities", "groups"
   add_foreign_key "user_availabilities", "availabilities"
