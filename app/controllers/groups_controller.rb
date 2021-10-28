@@ -15,4 +15,20 @@ class GroupsController < ApplicationController
         end
     end
 
+    def create
+        group = Group.new(group_params)
+        if group.save
+            render json: group,
+                except: [:created_at, :updated_at]
+        else
+            render json: {message: "Could not create group"}
+        end
+    end
+
+    private
+
+    def group_params
+        params.require(:group).permit(:group_name)
+    end
+
 end
