@@ -26,6 +26,17 @@ class EventsController < ApplicationController
         end
     end
 
+    def update
+        event = Event.find_by(id: params[:id])
+        event.update(event_params)
+        if event.save
+            render json: event,
+                except: [:created_at, :updated_at]
+        else
+            render json: {message: "Could not create event"}
+        end
+    end
+
     private
 
     def event_params
