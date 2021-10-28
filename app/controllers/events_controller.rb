@@ -33,7 +33,7 @@ class EventsController < ApplicationController
             render json: event,
                 except: [:created_at, :updated_at]
         else
-            render json: {message: "Could not create event"}
+            render json: {message: "Could not update event"}
         end
     end
 
