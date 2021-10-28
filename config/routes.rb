@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :group_events
   resources :friend_groups
   resources :event_availabilities
   resources :group_availabilities
