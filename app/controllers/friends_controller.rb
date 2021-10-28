@@ -10,6 +10,11 @@ class FriendsController < ApplicationController
         end
     end
 
+    def destroy
+        friend = Friend.find_by(id: params[:id])
+        friend.destroy
+    end
+
     private
 
     def friend_params
