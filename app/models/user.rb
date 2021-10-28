@@ -6,4 +6,6 @@ class User < ApplicationRecord
     has_many :availabilities, through: :user_availabilities
     has_many :user_availabilities
     has_many :friends
+    
+    has_secure_password
 end
