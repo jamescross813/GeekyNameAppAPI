@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :session, only: [:create, destroy]
+  
   post '/login' => 'sessions#create' 
   post '/logout' => 'sessions#destroy'
 
