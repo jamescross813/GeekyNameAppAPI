@@ -14,13 +14,13 @@ game_ticket_to_ride = Event.create(
     est_time: "60 mins",
     game_type: "family, chance, strategy")
 game_exit = Event.create(
-    event_name: "Exit: The Secret Lab", 
+    event_name: "Exit", 
     description: "EXIT: The Game is a series of escape room games for the home. Players must solve riddles and puzzles and crack codes to escape from an imaginary room or environment. But the clock is ticking! Can you escape?", 
     est_time: "120 mins",
     game_type: "escape, puzzle")
 game_unlock = Event.create(
-    event_name: "Unlock: The Island of Cr Goorse", 
-    description: "You and your team have crash-landed on the Island of an eccentric antiques collector in unlock! the Island of Doctor goorse. Two to six players will be split into teams, separated in the crash, and forced to escape from two separate starting points. The twists and turns of this challenging adventure will test even the most talented escape artists.  With your lines of communication cut, can you and your teammates find a way off the Island? unlocks a series of escape adventures for up to six players. With one hour on the clock, players work through a deck of sixty cards as a team, searching for clues, combining objects, and solving puzzles. The free unlock!  companion app runs the timer while also providing clues, offering hints, and confirming successes. Once the team has reached a solution and entered the correct code into the app, they will escape and win the game!", 
+    event_name: "Unlock", 
+    description: "Unlock! captures the exhilarating, heart-pounding excitement of a physical escape room adventure without leaving the tabletop. With one hour on the clock, players work through a deck of 60 cards to solve puzzles. Once the team enters the correct code into the companion app, they win!", 
     est_time: "120 mins",
     game_type: "escape, puzzle")
 game_carcasonne = Event.create(
