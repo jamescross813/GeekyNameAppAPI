@@ -2,14 +2,16 @@ class GroupsController < ApplicationController
     def index 
         groups = Group.all
         render json: groups,
-            except: [:created_at, :updated_at]
+            except: [:created_at, :updated_at],
+            include: [:user_groups, :group_events, :friend_groups]
     end
 
     def show
         group = Group.find_by(id: params[:id])
         if group
             render json: group,
-                except: [:created_at, :updated_at]
+                except: [:created_at, :updated_at],
+                include: [:user_groups, :group_events, :friend_groups]
         else
             render json: {message: "No group found"}
         end
