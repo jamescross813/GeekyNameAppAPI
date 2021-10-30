@@ -89,6 +89,9 @@ friend_two = Friend.create(user_id: user_one.id, friend_user_id: user_three.id)
 friend_three = Friend.create(user_id: user_one.id, friend_user_id: user_four.id)
 friend_four = Friend.create(user_id: user_two.id, friend_user_id: user_one.id)
 
+group_one = Group.create(group_name: "Fishels")
+group_two = Group.create(group_name: "SugarSkulls")
+
 DateInfo.create(day: 1, month: "October", year: 2021, month_num: 10)
 DateInfo.create(day: 2, month: "October", year: 2021, month_num: 10)
 DateInfo.create(day: 3, month: "October", year: 2021, month_num: 10)
