@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  # get '/login' => 'sessions#new' 
-  # post '/login' => 'sessions#create' 
-  # post '/logout' => 'sessions#destroy'
+  resources :session, only: [:create, destroy]
+  post '/login' => 'sessions#create' 
+  post '/logout' => 'sessions#destroy'
 
   resources :group_events, only:[:show, :index]
   resources :friend_groups, only:[:show, :index]
