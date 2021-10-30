@@ -80,9 +80,11 @@ game_azul = Event.create(
     game_type: "strategy")
 
 user_one = User.create(username:"Fish", password:"1234")
-user_two = User.create(username:"Bob", password: "1234")
+user_two = User.create(username:"Bibble", password: "1234")
 user_three = User.create(username: "Kasey", password: "1234")
 user_four = User.create(username: "Wool", password:"1234")
+
+friend_one = Friend.create(user_id: user_one.id, friend_user_id: user_two.id)
 
 DateInfo.create(day: 1, month: "October", year: 2021, month_num: 10)
 DateInfo.create(day: 2, month: "October", year: 2021, month_num: 10)
