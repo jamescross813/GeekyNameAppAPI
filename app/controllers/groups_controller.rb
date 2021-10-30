@@ -21,7 +21,8 @@ class GroupsController < ApplicationController
         group = Group.new(group_params)
         if group.save
             render json: group,
-                except: [:created_at, :updated_at]
+                except: [:created_at, :updated_at],
+                include: [:user_groups, :group_events, :friend_groups]
         else
             render json: {message: "Could not create group"}
         end
