@@ -22,7 +22,8 @@ class EventsController < ApplicationController
         event = Event.new(event_params)
         if event.save
             render json: event,
-                except: [:created_at, :updated_at]
+                except: [:created_at, :updated_at],
+                include: [:user_events, :group_events]
         else
             render json: {message: "Could not create event"}
         end
