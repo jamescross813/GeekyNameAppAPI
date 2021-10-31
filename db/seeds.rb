@@ -97,6 +97,11 @@ user_group_two = UserGroup.create(user_id: user_one.id, group_id: group_two.id)
 user_group_three = UserGroup.create(user_id: user_two.id, group_id: group_one.id)
 user_group_four = UserGroup.create(user_id: user_three.id, group_id: group_one.id)
 
+user_event_one = UserEvent.create(user_id: user_one.id, event_id: 1)
+user_event_two = UserEvent.create(user_id: user_one.id, event_id: 2)
+user_event_three = UserEvent.create(user_id: user_one.id, event_id: 3)
+user_event_four = UserEvent.create(user_id: user_one.id, event_id: 4)
+
 group_event_one = GroupEvent.create(group_id: group_one.id, event_id: 1)
 group_event_two = GroupEvent.create(group_id: group_one.id, event_id: 2)
 group_event_thee = GroupEvent.create(group_id: group_two.id, event_id: 1)
