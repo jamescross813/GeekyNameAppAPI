@@ -11,6 +11,14 @@ class UsersController < ApplicationController
         end
     end
 
+    def index
+        users = User.all
+        render json: users,
+                except: [:created_at, :updated_at],
+                include: [:user_events, :user_groups, :friends]
+    end
+
+
     def create
         binding.pry
         user = User.new(user_params)
