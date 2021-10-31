@@ -20,6 +20,7 @@ class EventsController < ApplicationController
 
     def create
         event = Event.new(event_params)
+        binding.pry
         if event.save
             render json: event,
                 except: [:created_at, :updated_at],
