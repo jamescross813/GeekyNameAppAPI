@@ -20,8 +20,8 @@ class UsersController < ApplicationController
 
 
     def create
-        binding.pry
-        user = User.new(user_params)
+        # binding.pry
+        user = User.new(username: params[:user][:username], password: params[:user][:password])
         if user.save
             render json: user,
             except: [:create_at, :updated_at],
@@ -31,9 +31,5 @@ class UsersController < ApplicationController
         end
     end
 
-    private
 
-    def user_params
-        params.require(:user).permit(:username, :password)
-    end
 end
