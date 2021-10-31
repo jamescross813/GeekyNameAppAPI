@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # resources :session, only: [:create]
   post '/login', to: 'sessions#create' 
   post '/logout', to: 'sessions#destroy'
-  post '/signup', to: 'users#create'
+  # post '/signup', to: 'users#create'
 
   resources :group_events, only:[:show, :index]
   resources :friend_groups, only:[:show, :index]
