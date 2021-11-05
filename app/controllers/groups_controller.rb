@@ -20,9 +20,10 @@ class GroupsController < ApplicationController
     def create
         
         group = Group.new(group_name: params[:group][:group_name])
-        # binding.pry
         if group.save
-            user_group = UserGroup.create(user_id: params[:group][:user_id], group_id: group.id)
+            group_id = group.id
+                user_group = UserGroup.create(user_id: params[:group][:user_id], group_id: group.id)
+            friendIteration(group_id)
             render json: group,
                 except: [:created_at, :updated_at],
                 include: [:user_groups, :group_events, :friend_groups]
@@ -51,6 +52,13 @@ class GroupsController < ApplicationController
 
     def group_params
         params.require(:group).permit(:group_name, :user_id)
+    end
+
+    def friendIteration(group)
+        params[:group][:friend_info].each do |friend|
+            user = User.find_by(username: friend)
+            FriendGroup.create(friend_id: user.id, group_id: group)
+        end
     end
 
 end
