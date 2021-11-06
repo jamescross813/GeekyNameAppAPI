@@ -20,8 +20,6 @@ class EventsController < ApplicationController
 
     def create
         event = Event.new(event_params)
-        
-        # binding.pry
         if event.save
             userEvent = UserEvent.create(user_id:params[:event][:user_id], event_id: event.id)
             render json: event,
