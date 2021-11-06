@@ -38,7 +38,7 @@ class GroupsController < ApplicationController
             render json: group,
                 except: [:created_at, :updated_at]
         else
-            render json: {message: "Could update group"}
+            render json: {message: "Could not update group"}
         end
     end
 
