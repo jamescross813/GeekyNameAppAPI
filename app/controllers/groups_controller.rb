@@ -18,7 +18,6 @@ class GroupsController < ApplicationController
     end
 
     def create
-        
         group = Group.new(group_name: params[:group][:group_name])
         if group.save
             group_id = group.id
