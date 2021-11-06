@@ -19,9 +19,12 @@ class EventsController < ApplicationController
     end
 
     def create
+        
         event = Event.new(event_params)
         if event.save
-            userEvent = UserEvent.create(user_id:params[:event][:user_id], event_id: event.id)
+            event_id= event.id
+                userEvent = UserEvent.create(user_id:params[:event][:user_id], event_id: event.id)
+            groupIteration(event_id)
             render json: event,
                 except: [:created_at, :updated_at],
                 include: [:user_events, :group_events]
@@ -50,5 +53,12 @@ class EventsController < ApplicationController
 
     def event_params
         params.require(:event).permit(:event_name, :description, :est_time, :game_type)
+    end
+
+    def groupIteration(event)
+        params[:event][:group].each do |group|
+            group = Group.find_by(group_name: group)
+            GroupEvent.create(group_id: group.id, event_id: event)
+        end
     end
 end
