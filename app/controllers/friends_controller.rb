@@ -27,7 +27,7 @@ class FriendsController < ApplicationController
 
     # private
 
-    # def friend_params
-    #     params.require(:friend).permit()
-    # end
+    def friend_params
+        params.require(:friend).permit()
+    end
 end
