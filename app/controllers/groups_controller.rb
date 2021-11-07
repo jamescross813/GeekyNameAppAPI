@@ -31,21 +31,21 @@ class GroupsController < ApplicationController
         end
     end
 
-    def update
-        group = Group.find_by(id: params[:id])
-        group.update(group_params)
-        if group.save
-            render json: group,
-                except: [:created_at, :updated_at]
-        else
-            render json: {message: "Could not update group"}
-        end
-    end
+    # def update
+    #     group = Group.find_by(id: params[:id])
+    #     group.update(group_params)
+    #     if group.save
+    #         render json: group,
+    #             except: [:created_at, :updated_at]
+    #     else
+    #         render json: {message: "Could not update group"}
+    #     end
+    # end
 
-    def destroy
-        group = Group.find_by(id: params[:id])
-        group.destroy
-    end
+    # def destroy
+    #     group = Group.find_by(id: params[:id])
+    #     group.destroy
+    # end
 
     private
 
