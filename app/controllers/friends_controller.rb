@@ -8,7 +8,7 @@ class FriendsController < ApplicationController
     end
     
     def create
-        # binding.pry
+
         friend_info = User.find_by(username: params[:friend][:username])
         friend = Friend.new(user_id: params[:friend][:user_id], friend_user_id: friend_info.id)
         if friend.save
@@ -20,15 +20,14 @@ class FriendsController < ApplicationController
         end
     end
 
-    def destroy
-        friend = Friend.find_by(id: params[:id])
-        friend.destroy
-    end
+    # def destroy
+    #     friend = Friend.find_by(id: params[:id])
+    #     friend.destroy
+    # end
 
-    private
+    # private
 
-    def friend_params
-        params.require(:friend).permit()
-        # need to add in way to get user_id and friends user_id
-    end
+    # def friend_params
+    #     params.require(:friend).permit()
+    # end
 end

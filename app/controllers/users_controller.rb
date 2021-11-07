@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
 
     def create
-        # binding.pry
+
         user = User.new(username: params[:user][:username], password: params[:user][:password])
         if user.save
             render json: user,
