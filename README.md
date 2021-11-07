@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Developed to work alongside Geeky Name App. Current Version of Geeky Name App allows you to sign on, add friends, groups and events. 
 
-Things you may want to cover:
+Ruby version: ruby '2.6.1'
 
-* Ruby version
+Deployment instructions
 
-* System dependencies
+To install clone the repo from:
 
-* Configuration
+https://github.com/jamescross813/GeekyNameAppAPI
 
-* Database creation
+Next:
 
-* Database initialization
+$ bundle install
 
-* How to run the test suite
+$ rake db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
+$ rake db:seed
 
-* Deployment instructions
+Finally:
 
-* ...
+$ rails s
